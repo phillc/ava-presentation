@@ -252,6 +252,170 @@
           <h2>&lt;/story&gt;
         </section>
 
+        <section data-background="/images/watching.gif">
+          <h2 class="fragment outlined" style="margin-bottom: 150px; color: #000;">The story</h2>
+          <ul class="fragment outlined" style="color: #fff;">
+            <li>Competition</li>
+            <li>Learning</li>
+            <li style="margin-bottom: 200px">Self improvement</li>
+            <li class="fragment">Motivation</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Time passes...</h2>
+        </section>
+
+        <section>
+          <img src="/images/heartsrankings.png" style="width: 700px;">
+
+          <ul style="font-size: 0.75em; line-height: 1em;">
+            <li>Lots of board games at work</li>
+            <li>Decided to start ranking them.</li>
+            <li>Elovation.</li>
+            <li>Hearts. Lots of it.</li>
+          </ul>
+        </section>
+
+        <section>
+          <img src="/images/lightbulb.png" style="height: 500px">
+          <h2>An AI competition</h2>
+        </section>
+
+        <section data-markdown style="font-size: 0.65em">
+          <script type="text/template">
+            ## Hearts
+
+            - Playable by humans
+              - Easy to pick up
+              - Very social game
+            - Skill based
+              - Good feeling of level of control
+              - A decent curve until proficiency
+            - Winnable
+              - Random enough
+              - Even a human playing against three perfect AI could potentially win
+            - 4 player FFA game
+              - 1v1 games directly weigh you vs your opponent
+                - If they crush you, well you lose undoubtedly. Not fun.
+              - 2v2 games weight you vs your opponents vs how you interact with a partner
+                - So not only do you have to figure out what your opponents are doing, you have to figure out what your potentially dumb teammate is doing
+              - FFA games weigh you vs your opponents and how they react to each other
+                - A person who crushes everyone can start to get targeted... or at the very least I can squeak in a second place finish.
+            - Card game
+              - Game tree isn't too large
+              - Simple rules
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Agent vs Agent
+
+            - Hearts
+            - Agents
+            - Design Goals:
+              - Targeted at small groups of people (companies, clubs, friends)
+                - Allow many languages (Apache Thrift)
+                  - As3, C Glib, C++, CSharp, D, Delphi, Erlang, Go, Haskell, Java, Java Me, Javascript, Node.js, Objective-c, OCaml, Perl, PHP, Python, Ruby, Smalltalk
+                - Low barrier to entry (simple installation and starting)
+                - Privately deployable
+                - Human playable – web UI
+                - Low infrastructure costs
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Long term
+
+            - More games
+            - Public centralized server (so that people in small groups can eventually see how they do against a larger group)
+            - Lower the barrier to entry
+            - Provide better sample agents
+            - Work through the quirks of supporting so many languages that may have different paradigms
+            - Facilitate small groups
+              - Live server showing replays of a moon shooting
+              - Live record keeping
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## You should know
+
+            - This is seriously in alpha phase
+              - Lots of little known bugs
+              - Memory leak
+            - My playground
+              - Promises, events, unnecessary patterns
+            - Haven't quite figured out starter packages
+            - API changes
+              - New features
+              - Refine interactions
+              - If an invalid move occurs, throw exception or pass a message?
+              - Reduce barrier to entry
+              - Restructure thrift data types to not be so cryptic or overly verbose
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## My personal goals
+
+            1. Write a monad, or at least grok them
+              - Once again, if you know haskell...
+            2. Achieve a high level of comfort with highly asynchronous events
+            3. Learn many different languages
+              - I have to maintain all the sample agents
+              - Next competition I will make another attempt at clojure
+            4.  Have an achievable side project
+            5.  Dominate all opposition
+          </script>
+        </section>
+
+        <section data-markdown style="font-size: 0.65em">
+          <script type="text/template">
+            ## Technical details
+
+            - Server
+              - node.js
+                - npm (ease of package installation and updating)
+                - Accessibility (emergence of node, brew)
+                - Async, evented
+                - Personal ability
+                - Not one of the crazy languages I wanted to learn (if I had any hope of ever receiving contributions)
+            - Apache Thrift
+              - Facebook
+              - 2007
+              - Open sourced to ASF
+              - Create a definition file, which then generates interfaces in many languages, and provides a TCP client for each of the languages
+              - Chosen for language reach, the packaged clients, and declared interface; not for data efficiency
+              - As3, C Glib, C++, CSharp, D, Delphi, Erlang, Go, Haskell, Java, Java Me, Javascript, Node.js, Objective-c, OCaml, Perl, PHP, Python, Ruby, Smalltalk
+              - I haven’t written a starter/sample agent in each of these, but the barrier to entry should be low
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Join me
+
+            - Stretch out your OO design pattern skills
+            - Learn that new language
+              - Functional?
+              - Immutable?
+              - Lispy?
+              - Old school?
+            - Try out TDD
+            - Learn new concepts
+            - Crush your co-workers egos
+
+            &nbsp;
+
+            ### http://agentvsagent.com
+            ## Phillip Campbell
+          </script>
+        </section>
 			</div>
 
 		</div>
