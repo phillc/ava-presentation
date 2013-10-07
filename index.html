@@ -65,13 +65,25 @@
         <section>
           <img src="/images/planetwars-looped.gif" style="float: left;">
 
-          <ul style="width: 20%; font-size: 0.8em;">
+          <ul style="width: 20%; font-size: 0.7em;">
+            <li>Planet wars</li>
             <li>Turn based game.</li>
             <li>1 second per turn</li>
             <li>Premise: Grow, attack to increase growth, annihilate opposition</li>
             <li>Allowed any language that talked over STDIN/ STDOUT</li>
             <li>I learned a lot</li>
           </ul>
+
+          <aside class="notes">
+            <ul>
+              <li>About the game - turn based - start with ships, attack and defend, growth rates neutral planets, gain you growth rate</li>
+              <li>How bots interacted with the game</li>
+              <li>given planets and cartesian coordinates</li>
+              <li>euclidean distance</li>
+              <li>engine built in java, wrapped your bot around the engine and it redirected stdin/stdout</li>
+              <li>Submit your bot to the contest servers.</li>
+            </ul>
+          </aside>
         </section>
 
         <section data-markdown>
@@ -79,13 +91,15 @@
             ## I chose JavaScript
 
             - I thought I was being funny
-              - What if I could beat all these people with a “slow” language.
+              - What if I could beat all these people with a "slow" language.
                 - I don’t believe node/server side JavaScript had much popularity at the time.
               - At one point I had the best JavaScript bot
             - I was set to go on a huge adventure
 
             Note:
-            Started My exploration into javascript outside a browser. If it wasn't for this competition, I probably would have never given node a thought.
+            - Rewrite later...
+            - Started My exploration into javascript outside a browser.
+            - If it wasn't for this competition, I probably would have never given node a thought.
           </script>
         </section>
 
@@ -95,6 +109,9 @@
           <p style="padding: 20px">
             I learned about Google’s javascript engine, v8, and its performance characteristics on prototypical classes vs closures
           </p>
+          <aside class="notes">
+            v8, node. Before coffeescript took off.
+          </aside>
         </section>
 
 				<section>
@@ -126,7 +143,13 @@
           </ul>
 
           <aside class="notes">
-            Simulated scenarios
+            <ul>
+              <li>Algorithms, pathing, minimax, zero sum, open information game vs closed information game</li>
+              <li>Trees, how large they can get, many possible states, iterate quickly</li>
+              <li>Simulated scenarios</li>
+              <li>If I attack you, where would you attack me and should I just wait for you to attack me. Some scenarios it best to wait and just let growth rate increase</li>
+              <li>Shortest path. But many optimizations were needed</li>
+            </ul>
           </aside>
         </section>
 
@@ -135,7 +158,7 @@
           <p>I decided to implement a Neural Network</p>
 
           <aside class="notes">
-            Neural networks. Thresholding.
+            Neural networks. Thresholding. Decided what move I was to take, what planets were most valuable. Ranked and executed.
           </aside>
         </section>
 
@@ -143,6 +166,9 @@
           <img src="/images/ga.png">
           <img src="/images/dna.png" style="width: 25%">
           <p>Learned about and implemented a genetic algorithms. Build analogies to human life and decision making.</p>
+          <aside class="notes">
+            Training my neutral network. I set up a huge rakefile (rubyists) that set up little tournaments, modified a few numbers. Ran that on every machine/laptop I had
+          </aside>
         </section>
 
         <section data-background="/images/lookatit.jpeg">
@@ -151,7 +177,7 @@
           <aside class="notes">
             <ul>
               <li>Met Kemper in a match on the competition. If I remember correctly, which I do, I won. Much smack talk ensued, with excuses about latest bot not being on the contest server yet.</li>
-              <li>In the AI contest, there was the private server</li>
+              <li>In the AI contest, there was the private/public server. Many people used it because it allowed you many many more games... cost of network lag. relaxed the 1 second rule. where I was, where he was, how is he doing that.</li>
               <li>Huge debates on the meaning of a zero sum game.</li>
               <li>Talked, argued, in office talk, drove other people insane. Smack talk.</li>
             </ul>
@@ -164,6 +190,10 @@
           <img src="/images/high-performance-javascript.gif" style="width: 20%">
           <img src="/images/blondie24.jpg" style="width: 20%">
           <img src="/images/aimodern.jpg" style="width: 20%">
+
+          <aside class="notes">
+            The number of books I read just for this contest... I don't normally read that many that fast. DESCRIBE THE BOOKS
+          </aside>
         </section>
 
         <section data-background="/images/profiling.png">
@@ -180,6 +210,7 @@
               I placed 218th
               <ul>
                 <li>Not bad, I definitely beat my goal</li>
+                <li>2nd best Javascript bot</li>
                 <li>Co-worker placed 122th</li>
               </ul>
             </li>
@@ -250,7 +281,7 @@
           </ul>
 
           <aside class="notes">
-            But hey, haskell!!!
+            Planetwars came from a mobile phone game. But hey, haskell!!!
           </aside>
         </section>
 
@@ -298,8 +329,12 @@
           <p class="outlined" style="color: #fff;">Game designed to be tough for AIs in response to Deep Blue beating a human grandmaster in chess.</p>
           <aside class="notes">
             <ul>
+              <li>chess board.</li>
+              <li>easy for humans, hard for ais. number of moves, move 4 times in a row, starting positions chosen</li>
+              <li>pull people into that hole</li>
               <li>$10,000+ prize to an agent that can beat a group of selected human opponents on off the shelf hardware. available each year to 2020. still unclaimed</li>
               <li>Specifically designed to be hard for AI</li>
+              <li>Game format file, had server for bots to find games in</li>
             </ul>
           </aside>
         </section>
@@ -310,6 +345,8 @@
           <aside class="notes">
             <ul>
               <li>Your only output was which direction you were going. Only input is which way your opponent went and if you ran into a wall or yourself</li>
+              <li>Started working on it, flood fill, go where there is the most space.</li>
+              <li>couldn't get anyone on my project to join me</li>
             </ul>
           </aside>
         </section>
@@ -319,7 +356,7 @@
 
           <aside class="notes">
             <ul>
-              <li>That was pretty much my story</li>
+              <li>That was pretty much my story. UP TO THIS POINT</li>
             </ul>
           </aside>
         </section>
@@ -335,12 +372,12 @@
 
           <aside class="notes">
             <ul>
+              <li>THREE ANIMATIONS</li>
               <li>Each person may interpret it differently, especially if you lived it.</li>
               <li>Some people saw a story about competition. Story about how bad I failed. Story about learning.</li>
               <li>For one of you this may just be a story about how you beat the current presenter</li>
-              <li>Motivating factors.</li>
-              <li>Motivated to compete</li>
-              <li>Forced to compete to keep up the trash talk</li>
+              <li>Motivating factors. Motivated to compete. Forced to compete to keep up the trash talk</li>
+              <li>Self improvement. Learned lots of things that translate to me as a programmer</li>
             </ul>
           </aside>
         </section>
@@ -363,7 +400,7 @@
           </ul>
 
           <aside class="notes">
-            All sorts of games... carcasonne, tsuro, many others... but we got stuck on and obssesed with
+            All sorts of games... carcasonne, tsuro, many others... but we got stuck on and obssesed with. 200+ games
           </aside>
         </section>
 
@@ -400,23 +437,24 @@
 
         <section data-markdown>
           <script type="text/template">
-            ## Agent vs Agent
+            ## Agent vs Agent - Design goals
 
-            - Hearts
-            - Agents
-            - Design Goals:
-              - Targeted at small groups of people (companies, clubs, friends)
-                - Allow many languages (Apache Thrift)
-                  - As3, C Glib, C++, CSharp, D, Delphi, Erlang, Go, Haskell, Java, Java Me, Javascript, Node.js, Objective-c, OCaml, Perl, PHP, Python, Ruby, Smalltalk
-                - Low barrier to entry (simple installation and starting)
-                - Privately deployable
-                - Human playable – web UI
-                - Low infrastructure costs
+            - Targeted at small groups of people (companies, clubs, friends)
+            - Allow many languages (Apache Thrift)
+              - As3, C Glib, C++, CSharp, D, Delphi, Erlang, Go, Haskell, Java, Java Me, Javascript, Node.js, Objective-c, OCaml, Perl, PHP, Python, Ruby, Smalltalk
+            - Low barrier to entry (simple installation, quick starting, understandable rule set)
+            - Privately deployable
+            - Human playable – web UI
+            - Low infrastructure costs
+            - Support for competitions (logins, record tracking, rankings, etc...)
 
             Note:
-            - In the AI contest, there was the private server
-            - (Go over the current state of it)
+            - Design goals. These are things I think are very important for my personal interest in a AI competition
+            - Low barrier to entry - Should be able to just start. I have built several sample agents already. Existing games. Not trying to invent a game spec.
+            - Privately deployable - In the AI contest, there was the private server
+            - Human playable - and very visual. so I can see what is going on. How many bugs I've encountered with my own
             - I intend to host this on my raspberry pi
+            - (Go over the current state of it)
           </script>
         </section>
 
@@ -472,6 +510,7 @@
             5.  Dominate all opposition
 
             Note:
+            - Being that this has been a story of self improvement of myself
             - My goals have self learning ingrained
             - Async and evented patterns already becoming quite large... testing style is different
             - I am upset at the fact that my last clojure attempts have been thwarted by maven.
@@ -519,6 +558,7 @@
             ## Others
 
             - Code and conquer - http://codeandconquer.co/
+            - Robocode - http://robocode.sourceforge.net/
             - AI showdown - http://www.aishowdown.com/
             - Cloud ball - http://www.cloudball.se/
             - Mario AI - http://www.marioai.org/
@@ -528,11 +568,12 @@
 
             Note:
             - Code and conquer - python javascript - could be very pretty. Some form of rpg or war game. coming soon.
+            - Robocode - .net java. old school combat. tank shooting at each other, radar.
             - Ai showdown - python - some flood fill attack game. monthly competitions
             - cloudball - microsoft - visual studio c# - team soccer game
             - Mario ai - java - play levels of mario, or something...
             - starcraft - 2014
-            - ai birds - java - yet another example how ai competitions can be humanized and fun.
+            - ai birds - java - angry birds - yet another example how ai competitions can be humanized and fun.
             - Research it! - AI Competitions happening all the time. Poker, people coming up with games
             - Regardless if you choose agent vs agent...
           </script>
@@ -557,6 +598,8 @@
             ### http://agentvsagent.com
             ## Phillip Campbell
           </script>
+        </section>
+        <section data-background="/images/bye.gif">
         </section>
 			</div>
 
