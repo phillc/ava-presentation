@@ -1,93 +1,100 @@
 <!doctype html>
-<html lang="en">
-
+<html>
 	<head>
 		<meta charset="utf-8">
-
-		<title>Agent vs Agent</title>
-
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
-		<link rel="stylesheet" href="css/ava.css">
+		<title>reveal.js</title>
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
+		<link rel="stylesheet" href="css/agentvsagent.css">
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
 		<script>
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		 var link = document.createElement( 'link' );
+		 link.rel = 'stylesheet';
+		 link.type = 'text/css';
+		 link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		 document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
+    <style>
+     .container{
+         display: flex;
+     }
+     .col{
+         flex: 1;
+     }
+    </style>
 	</head>
-
 	<body>
+		  <div class="reveal" id="presentation">
 
-		<div class="reveal">
+			    <!-- Any section element inside of this container is displayed as a slide -->
+			    <div class="slides">
+              <section data-markdown>
+                  <textarea data-template>
+# Sharpening the craft with code competitions
+## and Agent vs. Agent
+### Phillip Campbell
+              </textarea>
+          </section>
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-        <section data-markdown>
-          <script type="text/template">
-            # AI Competitions
-            ## and Agent vs. Agent
-            ### Phillip Campbell
-          </script>
-        </section>
+          <section data-markdown>
+              <script type="text/template">
+               ## Agent vs. Agent
 
-        <section data-markdown>
-          <script type="text/template">
-            ## Agent vs. Agent
+               - A side project of mine
+               - Game(s) for AI and humans
+              </script>
+          </section>
 
-            - A side project of mine
-            - Game(s) for AI and humans
-          </script>
-        </section>
+          <section data-markdown>
+              <script type="text/template">
+               ## A story
 
-        <section data-markdown>
-          <script type="text/template">
-            ## A story
+               - Google AI Challenge
+               - Hosted by the University of Waterloo Computer Science Club
 
-            - Google AI Challenge
-              - Hosted by the University of Waterloo Computer Science Club
+               Note:
+               Let me tell you a story about me, it all starts with an AI competition
+              </script>
+          </section>
 
-            Note:
-            Let me tell you a story about me, it all starts with an AI competition
-          </script>
-        </section>
+          <section>
+              <div class="container">
+                  <div class="col">
+                    <img src="/images/planetwars-looped.gif">
+                  </div>
+                  <div class="col">
+                    <ul style="width: 20%; font-size: 0.7em;">
+                        <li>Planet wars</li>
+                        <li>Turn based game.</li>
+                        <li>1 second per turn</li>
+                        <li>Premise: Grow, attack to increase growth, annihilate opposition</li>
+                        <li>Allowed any language that talked over STDIN/ STDOUT</li>
+                        <li>I learned a lot</li>
+                    </ul>
+                  </div>
+                </div>
 
-        <section>
-          <img src="/images/planetwars-looped.gif" style="float: left;">
+              <aside class="notes">
+                  <ul>
+                      <li>About the game - turn based - start with ships, attack and defend, growth rates neutral planets, gain you growth rate</li>
+                      <li>How bots interacted with the game</li>
+                      <li>given planets and cartesian coordinates</li>
+                      <li>euclidean distance</li>
+                      <li>engine built in java, wrapped your bot around the engine and it redirected stdin/stdout</li>
+                      <li>Submit your bot to the contest servers.</li>
+                  </ul>
+              </aside>
+          </section>
 
-          <ul style="width: 20%; font-size: 0.7em;">
-            <li>Planet wars</li>
-            <li>Turn based game.</li>
-            <li>1 second per turn</li>
-            <li>Premise: Grow, attack to increase growth, annihilate opposition</li>
-            <li>Allowed any language that talked over STDIN/ STDOUT</li>
-            <li>I learned a lot</li>
-          </ul>
-
-          <aside class="notes">
-            <ul>
-              <li>About the game - turn based - start with ships, attack and defend, growth rates neutral planets, gain you growth rate</li>
-              <li>How bots interacted with the game</li>
-              <li>given planets and cartesian coordinates</li>
-              <li>euclidean distance</li>
-              <li>engine built in java, wrapped your bot around the engine and it redirected stdin/stdout</li>
-              <li>Submit your bot to the contest servers.</li>
-            </ul>
-          </aside>
-        </section>
-
-        <section data-markdown>
+          <section data-markdown>
           <script type="text/template">
             ## I chose JavaScript
 
@@ -537,25 +544,6 @@
 
         <section data-markdown>
           <script type="text/template">
-            ## Technical details - Apache Thrift
-
-            - Facebook
-            - 2007
-            - Open sourced to ASF
-            - Create a definition file, which then generates interfaces in many languages, and provides a TCP client for each of the languages
-            - Chosen for language reach, the packaged clients, and declared interface; not for data efficiency
-            - As3, C Glib, C++, CSharp, D, Delphi, Erlang, Go, Haskell, Java, Java Me, Javascript, Node.js, Objective-c, OCaml, Perl, PHP, Python, Ruby, Smalltalk
-            - I haven’t written a starter/sample agent in each of these, but the barrier to entry should be low
-
-            Note:
-            - Thrift more procedural... or rather closer to the paradigm of a language, like node is callbacks.
-            - Thrift is for reach, could do long polling, jsonrpc or something...
-            - But how much is gained is worth it
-          </script>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
             ## Others
 
             - Code and conquer - http://codeandconquer.co/
@@ -606,34 +594,21 @@
 
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+		<script src="js/reveal.js"></script>
 
 		<script>
-
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-
-				// Optional libraries used to extend on reveal.js
+				hash: true,
 				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
-
 		</script>
-
 	</body>
 </html>
